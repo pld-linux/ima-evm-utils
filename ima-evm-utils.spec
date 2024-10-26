@@ -5,12 +5,12 @@
 Summary:	IMA/EVM signing utility and library
 Summary(pl.UTF-8):	Biblioteka i narzędzie do podpisów IMA/EVM
 Name:		ima-evm-utils
-Version:	1.3.2
-Release:	2
+Version:	1.4
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://downloads.sourceforge.net/linux-ima/%{name}-%{version}.tar.gz
-# Source0-md5:	55cc0e2c77a725f722833c3b4a36038c
+# Source0-md5:	d1cb73c10857b5526ee1f37769c5458a
 URL:		http://linux-ima.sourceforge.net/
 BuildRequires:	asciidoc
 BuildRequires:	autoconf >= 2.65
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS NEWS README examples/ima-*.sh
 %attr(755,root,root) %{_bindir}/evmctl
 %attr(755,root,root) %{_libdir}/libimaevm.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libimaevm.so.2
+%attr(755,root,root) %ghost %{_libdir}/libimaevm.so.3
 %{_mandir}/man1/evmctl.1*
 
 %files devel
