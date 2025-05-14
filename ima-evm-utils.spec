@@ -6,7 +6,7 @@ Summary:	IMA/EVM signing utility and library
 Summary(pl.UTF-8):	Biblioteka i narzędzie do podpisów IMA/EVM
 Name:		ima-evm-utils
 Version:	1.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://downloads.sourceforge.net/linux-ima/%{name}-%{version}.tar.gz
@@ -55,11 +55,22 @@ Podsystem integralności Linuksa pozwala na używanie podpisów IMA i
 EVM. Podpisy EVM chronią metadane plików, takie jak atrybuty i
 rozszerzone atrybuty plików. Podpisy IMA chronią zawartość plików.
 
+%package lib
+Summary:	IMA/EVM library
+Summary(pl.UTF-8):	Biblioteka IMA/EVM
+Group:		Libraries
+
+%description lib
+IMA/EVM library.
+
+%description lib -l pl.UTF-8
+Biblioteka IMA/EVM.
+
 %package devel
 Summary:	Header files for IMA/EVM library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki IMA/EVM
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-lib = %{version}-%{release}
 
 %description devel
 Header files for IMA/EVM library.
@@ -112,9 +123,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README examples/ima-*.sh
 %attr(755,root,root) %{_bindir}/evmctl
+%{_mandir}/man1/evmctl.1*
+
+%files lib
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libimaevm.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libimaevm.so.3
-%{_mandir}/man1/evmctl.1*
 
 %files devel
 %defattr(644,root,root,755)
