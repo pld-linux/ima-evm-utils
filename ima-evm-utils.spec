@@ -59,6 +59,7 @@ rozszerzone atrybuty plików. Podpisy IMA chronią zawartość plików.
 Summary:	IMA/EVM library
 Summary(pl.UTF-8):	Biblioteka IMA/EVM
 Group:		Libraries
+Conflicts:	ima-evm-utils < 1.4-2
 
 %description lib
 IMA/EVM library.
